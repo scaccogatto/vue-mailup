@@ -4,6 +4,8 @@ MailUp plugin for VueJS -> [official docs](http://help.mailup.com/display/mailup
 
 ## Usage
 
+### Vue entry point
+
 `$ npm install vue-mailup`
 
 ```js
@@ -13,7 +15,7 @@ import VueMailUp from 'vue-mailup';
 Vue.use(VueMailUp, options)
 ```
 
-Vue Component
+### Vue Component
 
 ```js
 export default {
