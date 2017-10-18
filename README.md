@@ -40,7 +40,7 @@ export default {
 
       /**
        * this will call:
-       * k2z5.s01.it/frontend/xmlsubscribe.aspx
+       * http://k2z5.s01.it/frontend/xmlsubscribe.aspx
        * ?List=1
        * &Confirm=1
        * &retCode=1
