@@ -2,7 +2,7 @@
   "name": "vue-mailup",
   "version": "0.0.1",
   "description": "MailUp plugin for VueJS",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +27,11 @@
     "qs": "^6.5.1"
   },
   "devDependencies": {
-    "eslint": "^4.9.0"
+    "eslint": "^4.9.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
   }
 }

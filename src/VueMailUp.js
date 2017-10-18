@@ -9,7 +9,7 @@ const VueMailUp = {
         return {
           List: options.list,
           retCode: 1,
-          Confirm: process.env.NODE_ENV === 'development' ? '0' : '1'
+          Confirm: options.confirm
         }
       },
       subscribe (data) {
@@ -47,3 +47,8 @@ const VueMailUp = {
 }
 
 export default VueMailUp
+
+// browser load
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(VueMailUp)
+}
