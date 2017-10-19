@@ -9,6 +9,7 @@ const VueMailUp = {
       get NewsletterParameters () {
         return {
           List: options.list,
+          ListGuid: options.listGuid,
           retCode: 1,
           Confirm: options.confirm
         }
@@ -17,7 +18,7 @@ const VueMailUp = {
         return subscribe.apply(options.key, data)
       },
       checkSubscriber (data) {
-        // return checkSubscriber.apply(options.key, data)
+        return checkSubscriber.apply(options.key, data)
       },
       updateSubscriber (data) {
         // return updateSubscriber.apply(options.key, data)
