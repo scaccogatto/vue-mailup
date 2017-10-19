@@ -195,6 +195,18 @@ const options = {
 };
 ```
 
+## Methods
+
+- `subscribe (data, key)`: subscribes to a list
+- `checkSubscriber (data, key)`: checks if a user is subscribed
+- `updateSubscriber (data, key)`: update subscriber status
+- `unsubscribe (data, key)`: unsubscribe a user
+
+### Parameters
+
+- `data` [object]: required, key => value, as sent to mailup
+- `key` [string]: optional, if not set the "options" key will be used
+
 ## TODO
 
 - Webpack bundle

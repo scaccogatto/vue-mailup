@@ -14,17 +14,17 @@ const VueMailUp = {
           Confirm: options.confirm
         }
       },
-      subscribe (data) {
-        return subscribe.apply(options.key, data)
+      subscribe (data, key = options.key) {
+        return subscribe.apply(key, data)
       },
-      checkSubscriber (data) {
-        return checkSubscriber.apply(options.key, data)
+      checkSubscriber (data, key = options.key) {
+        return checkSubscriber.apply(key, data)
       },
-      updateSubscriber (data) {
-        return updateSubscriber.apply(options.key, data)
+      updateSubscriber (data, key = options.key) {
+        return updateSubscriber.apply(key, data)
       },
-      unsubscribe (data) {
-        return unsubscribe.apply(options.key, data)
+      unsubscribe (data, key = options.key) {
+        return unsubscribe.apply(key, data)
       }
     }
   }
