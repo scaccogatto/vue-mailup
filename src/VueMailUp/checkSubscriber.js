@@ -5,7 +5,7 @@ import { validateDataObj, cleanSerialize } from './validate.js'
 const checkSubscriber = {
   apply (key, data) {
     if (!validateDataObj(data, checkSubscriber.$_mandatoryKeys)) throw new Error('Not valid data object', data)
-    return axios.get(checkSubscriber.$_getApiUrl(key), { params: data, paramsSerializer: checkSubscriber.$_serializer })
+    return axios.get(checkSubscriber.$_getApiUrl(key), { params: data, paramsSerializer: cleanSerialize })
       .then(r => _.get(checkSubscriber.$_replyCodesMap, r))
       .catch(r => _.get(checkSubscriber.$_replyCodesMap, '1'))
   },
@@ -18,9 +18,6 @@ const checkSubscriber = {
   },
   $_getApiUrl (key) {
     return `//${key}/frontend/Xmlchksubscriber.aspx`
-  },
-  $_serializer (params) {
-    return cleanSerialize(params)
   }
 }
 

@@ -21,10 +21,10 @@ const VueMailUp = {
         return checkSubscriber.apply(options.key, data)
       },
       updateSubscriber (data) {
-        // return updateSubscriber.apply(options.key, data)
+        return updateSubscriber.apply(options.key, data)
       },
       unsubscribe (data) {
-        // return unsubscribe.apply(options.key, data)
+        return unsubscribe.apply(options.key, data)
       }
     }
   }
