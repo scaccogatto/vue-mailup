@@ -20,7 +20,7 @@ const VueMailUp = {
       }
     }
   },
-  $_mandatoryKeys: ['List', 'email', 'csvFldNames', 'csvFldValues'],
+  $_mandatoryKeys: ['List', ['email', 'sms'], 'csvFldNames', 'csvFldValues'],
   $_noEncodeKeys: ['csvFldNames', 'csvFldValues', 'email'],
   $_replyCodesMap: {
     '0': { type: 'info', text: 'Operation completed successfully' },
@@ -33,7 +33,12 @@ const VueMailUp = {
     return `//${key}/frontend/xmlSubscribe.aspx`
   },
   $_validateDataObj (data) {
-    return _.every(VueMailUp.$_mandatoryKeys, k => _.hasIn(data, k))
+    return _.every(VueMailUp.$_mandatoryKeys, k => {
+      // FIXME
+      if (typeof k === 'string') return _.hasIn(data, k)
+      if (typeof k === 'object') return _.some(k, v => _.hasIn(data, v))
+      return false
+    })
   },
   $_serializer (params) {
     return `${VueMailUp.$_encodedSerializer(_.omit(params, VueMailUp.$_noEncodeKeys))}&${VueMailUp.$_cleanSerializer(_.pick(params, VueMailUp.$_noEncodeKeys))}`
